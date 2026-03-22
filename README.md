@@ -1,27 +1,23 @@
-# Google Meet Emoji Keybow
+# Google Meet Emoji Keybow (Device Script)
 
-This project configures an original Pi Zero Pimoroni Keybow to send emoji reactions in Google Meet.
+This repository contains the Lua script to configure an original Pi Zero Pimoroni Keybow as a dedicated hardware emoji reaction pad for Google Meet.
 
-## Setup Instructions
+> **Note:** This is Part 1 of the project. It works in tandem with the custom Chrome Extension (located in the `keybow_extension` repository).
 
-### 1. Keybow Configuration
-1. Unplug your Keybow and remove the MicroSD card.
-2. Insert the MicroSD card into your Mac.
-3. Access the `layouts` folder on the SD card, or place the `keys.lua` file at the root of the SD card (depending on how you have configured the layout). By default, replace the `keys.lua` file on the root of your Keybow OS SD card with the `keys.lua` file provided in this project folder.
-4. Eject the SD card, put it back into the Keybow, and plug the Keybow into your Mac via USB.
-5. The Keybow should boot up in ~15 seconds, and its keys will light up with the emoji colors.
+## 1. Keybow OS Setup
+This script runs entirely on the Keybow's Raspberry Pi Zero W, which requires the official Keybow OS firmware to boot. 
 
-### 2. Browser Extension Setup
-Since Google Meet doesn't have native keyboard shortcuts for emojis, we rely on a Chrome extension.
+1. Format a MicroSD card to **FAT32** (MS-DOS FAT).
+2. Download the [Keybow OS ZIP](https://github.com/pimoroni/keybow-firmware/releases/download/v0.0.4/keybow-0.0.4.zip) from Pimoroni's firmware releases.
+3. Unzip the file and copy all of the inner content directly onto the root of the MicroSD card (you should see files like `bootcode.bin` and `start.elf` at the top level of the card).
 
-1. Open Google Chrome.
-2. Install a free Google Meet reaction extension, such as **Meet Reaction Shortcuts** or **Reactions for Google Meet**.
-3. Open Chrome's extension shortcuts page by typing ``chrome://extensions/shortcuts`` in the address bar.
-4. Locate your reaction extension in the list.
-5. Click the shortcut field for each emoji, and **press the corresponding physical key on your Keybow**. 
-   - The Keybow is programmed to output the dedicated `Numpad` keys. Pressing the key on the keypad will automatically register this key in Chrome, completely avoiding any conflicts with your Mac's normal modifiers.
-   - For example, press Key 0 (Top Left, Yellow) for Thumbs Up. It should register as `Num 1` or `Numpad 1`.
-6. Apply these shortcuts for the 9 distinct emojis you'd like to use.
+## 2. Install the Custom Layout
+This project maps the physical keys to standard **Numpad Keys** (`Numpad 1` through `Numpad =`), avoiding macOS and Windows system shortcut conflicts.
 
-### Usage
-Once mapped, simply join a Google Meet call. Pressing the keys on the Keybow will instantly trigger the corresponding emoji reaction on screen, without interfering with your normal typing!
+1. Copy the `keys.lua` file from this repository and place it into the root directory of your MicroSD card.
+2. Overwrite the default `keys.lua` file when prompted.
+3. Eject the SD card, insert it into the Keybow, and plug the USB cable into your computer. 
+4. The Keybow will boot in ~15 seconds, and the keys will illuminate with colors matching the assigned emojis.
+
+## 3. Browser Extension Setup
+For the Keybow's Numpad outputs to actually trigger emojis in Google Meet, you must install the paired Chrome Extension from the `keybow_extension` repository. This extension passively listens for the Numpad keystrokes and programmatically triggers the reactions in the Google Meet interface.
