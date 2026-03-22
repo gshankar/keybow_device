@@ -25,17 +25,22 @@ This script runs entirely on the Keybow's Raspberry Pi Zero W, which requires th
 ### Key Layout & Color Mapping
 When holding the Keybow with the USB cable facing "up" (away from you), the keys are mapped to their respective emojis and LED colors perfectly from top-left to bottom-right:
 
-| Position | Emoji | LED Color | Numpad Key Emitted |
-|----------|-------|-----------|--------------------|
-| **Top Left** | ❤️ Heart | Red | `Numpad 1` |
-| **Top Mid** | 👍 Thumbs Up | Yellow | `Numpad 2` |
-| **Top Right** | 🎉 Party | Purple | `Numpad 3` |
-| **Mid Left** | 👏 Clap | Green | `Numpad 4` |
-| **Center** | 😂 Laugh | Bright Blue | `Numpad 5` |
-| **Mid Right** | 😮 Surprise | Pink | `Numpad 6` |
-| **Bot Left** | 😢 Cry | Dark Blue | `Numpad 7` |
-| **Bot Mid** | 🤔 Thinking | Orange | `Numpad 8` |
-| **Bot Right** | 👎 Thumbs Down | Yellow | `Numpad 9` |
+| Position | Emoji / Action | LED Color | Numpad Key Emitted |
+|----------|----------------|-----------|--------------------|
+| **Row 1 Left** | ❤️ Heart | Red | `Numpad 1` |
+| **Row 1 Mid**  | 👍 Thumbs Up | Yellow | `Numpad 2` |
+| **Row 1 Right**| 🎉 Party | Purple | `Numpad 3` |
+| **Row 2 Left** | 👏 Clap | Green | `Numpad 4` |
+| **Row 2 Mid**  | 😂 Laugh | Bright Blue | `Numpad 5` |
+| **Row 2 Right**| 😮 Surprise | Pink | `Numpad 6` |
+| **Row 3 Left** | 😢 Cry | Dark Blue | `Numpad 7` |
+| **Row 3 Mid**  | 🤔 Thinking | Orange | `Numpad 8` |
+| **Row 3 Right**| 👎 Thumbs Down | Yellow | `Numpad 9` |
+| **Row 4 Left** | 🎤 Toggle Mute | Red (Muted) / White | `Numpad 0` |
+| **Row 4 Mid**  | 📷 Toggle Video | Red (Off) / White | `Numpad .` |
+| **Row 4 Right**| ✋ Raise Hand | Green (Raised) / White | `Numpad =` |
+
+> **⚠️ Note on Media Controls:** The hardware LED tracking for microphone, video, and hand raising is maintained *locally* on the Keybow. If you use your mouse to click the mute button directly on the Google Meet screen, the Keybow's internal states will not synchronize. Use the physical Keybow keys exclusively to manipulate these states and they will remain perfectly in sync!
 
 ## Next Steps
 Head over to the **[keybow_extension](https://github.com/gshankar/keybow_extension)** repository to install the software side of this project!
