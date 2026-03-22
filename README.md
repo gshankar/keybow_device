@@ -22,5 +22,20 @@ This script runs entirely on the Keybow's Raspberry Pi Zero W, which requires th
 3. Eject the SD card, insert it into the Keybow, and plug the USB cable into your computer. 
 4. The Keybow will boot in ~15 seconds, and the keys will illuminate with colors matching the assigned emojis.
 
+### Key Layout & Color Mapping
+When holding the Keybow with the USB cable facing "up" (away from you), the keys are mapped to their respective emojis and LED colors perfectly from top-left to bottom-right:
+
+| Position | Emoji | LED Color | Numpad Key Emitted |
+|----------|-------|-----------|--------------------|
+| **Top Left** | ❤️ Heart | Red | `Numpad 1` |
+| **Top Mid** | 👍 Thumbs Up | Yellow | `Numpad 2` |
+| **Top Right** | 🎉 Party | Purple | `Numpad 3` |
+| **Mid Left** | 👏 Clap | Green | `Numpad 4` |
+| **Center** | 😂 Laugh | Bright Blue | `Numpad 5` |
+| **Mid Right** | 😮 Surprise | Pink | `Numpad 6` |
+| **Bot Left** | 😢 Cry | Dark Blue | `Numpad 7` |
+| **Bot Mid** | 🤔 Thinking | Orange | `Numpad 8` |
+| **Bot Right** | 👎 Thumbs Down | Yellow | `Numpad 9` |
+
 ## Next Steps
 Head over to the **[keybow_extension](https://github.com/gshankar/keybow_extension)** repository to install the software side of this project!
