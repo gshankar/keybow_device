@@ -1,0 +1,6 @@
+# Ignore downloaded OS binaries and zip files
+keybow_os/
+*.zip
+
+# Ignore Mac OS hidden files
+.DS_Store
